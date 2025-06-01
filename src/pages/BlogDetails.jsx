@@ -17,7 +17,7 @@ const Blog = () => {
     <div className="blog-detail-container">
       <h1 className="blog-detail-title">{selectedBlog.title}</h1>
       <img src={selectedBlog.image} alt={selectedBlog.title} className="blog-detail-image" />
-      <p className="blog-detail-content">{selectedBlog.content}</p>
+      <div className="blog-detail-content" dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />
       <p className='home-button-redirect'>--back to home</p>
     </div>
   );

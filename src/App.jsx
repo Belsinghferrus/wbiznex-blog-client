@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import React from 'react';
 import Header from './components/Header';
+import CreateBlog from './pages/CreateBlog';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="/login" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            <Route path="/admin/create" element={<BlogDetails />} />
+            <Route path="/admin/create" element={<CreateBlog />} />
             <Route path="/admin/edit/:id" element={<EditBlog />} />
           </Routes>
         </main>

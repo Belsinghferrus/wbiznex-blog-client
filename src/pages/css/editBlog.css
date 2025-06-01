@@ -1,0 +1,38 @@
+.edit-blog-page {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .edit-form input[type="text"],
+  .edit-form input[type="file"] {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .preview-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .save-btn {
+    background-color: #1103A6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .save-btn-disable{
+    background-color: #888;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }

@@ -1,12 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import './css/bloglistTile.css'
+import useBlogStore from '../store/blogStore';
 const BlogListTile = ({ blog, onDelete }) => {
+
   const navigate = useNavigate();
 
   return (
     <div className="blog-tile">
       <img src={blog.image} alt="blog" />
-      <div className="tile-info">
+      <div onClick={() => navigate(`/blog/${blog.id}`)} className="tile-info">
         <h4>{blog.title}</h4>
       </div>
       <div className="tile-actions">

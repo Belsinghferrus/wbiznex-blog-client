@@ -37,6 +37,58 @@ const useBlogStore = create((set) => ({
       console.error('Delete Blog Error:', err);
     }
   },
+
+
+  addBlog: async (title, content, image) => {
+    try {
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('content', content);
+      formData.append('image', image);
+
+      const res = await axiosInstance.post('/blog/add', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      set((state) => ({
+        blogs: [res.data, ...state.blogs],
+      }));
+    } catch (err) {
+      console.error('Add Blog Error:', err);
+      set({ error: 'Failed to add blog' });
+    }
+  },
+
+
+  updateBlog: async (id, updatedData) => {
+    set({ loading: true, error: null });
+    try {
+      const formData = new FormData();
+      formData.append('title', updatedData.title);
+      formData.append('content', updatedData.content);
+
+      if (updatedData.image instanceof File) {
+        formData.append('image', updatedData.image); // ✅ must match backend key
+      } else if (updatedData.imageUrl) {
+        formData.append('imageUrl', updatedData.imageUrl); // optional fallback
+      }
+
+      const res = await axiosInstance.put(`/blog/edit/${id}`, formData); // ✅ No headers
+      set((state) => ({
+        blogs: state.blogs.map((b) => (b.id === id ? res.data : b)),
+      }));
+    }
+    catch (error) {
+      console.error('Update Blog Error:', error);
+      throw new Error('Failed to update blog');
+    } finally{
+      set({ loading: false, error: null });
+    }
+  },
+
+
 }));
 
 export default useBlogStore;
