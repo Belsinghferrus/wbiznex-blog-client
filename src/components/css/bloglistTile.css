@@ -1,0 +1,54 @@
+.blog-tile {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    justify-content: space-between;
+  }
+  
+  .blog-tile img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 12px;
+  }
+  
+  .tile-info {
+    flex-grow: 1;
+    padding-left: 10px;
+  }
+  .tile-actions{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .tile-actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #1103A6;
+    margin-left: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .action-text {
+    display: inline;
+    margin-left: 4px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .action-text {
+      display: none;
+    }
+  
+    .blog-tile img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  

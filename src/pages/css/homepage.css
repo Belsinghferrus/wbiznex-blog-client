@@ -1,0 +1,20 @@
+.home-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  
+  .home-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1103A6;
+  }
+  
+
+
+.blog-card-grid{
+    display: grid; 
+    grid-Template-Columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 20px;
+}
