@@ -18,3 +18,25 @@
     grid-Template-Columns: repeat(auto-fit, minmax(300px, 1fr));
      gap: 20px;
 }
+
+.admin-notice {
+  background-color: #F4F4FA;
+  border-left: 4px solid #1103A6;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+.admin-dashboard-button {
+  display: inline-block;
+  background-color: #1103A6;
+  color: white;
+  padding: 10px 18px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.admin-dashboard-button:hover {
+  background-color: #0e038e;
+}

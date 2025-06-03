@@ -1,5 +1,5 @@
 // src/pages/AddBlog.jsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import useBlogStore from '../store/blogStore.js';
@@ -12,8 +12,22 @@ const AddBlog = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
-    const { addBlog } = useBlogStore();
+    const { addBlog, loading } = useBlogStore();
+    const [preview, setPreview] = useState(null); // State for image preview
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (image) {
+            const objectUrl = URL.createObjectURL(image);
+            setPreview(objectUrl);
+
+            // Cleanup the object URL when the component unmounts or image changes
+            return () => URL.revokeObjectURL(objectUrl);
+        } else {
+            setPreview(null);
+        }
+    }, [image]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -45,6 +59,8 @@ const AddBlog = () => {
                     onChange={(e) => setImage(e.target.files[0])}
                     required
                 />
+                {preview && <img src={preview} alt="Preview" className="preview-img" />}
+
 
                 <ReactQuill
                     className="quill-editor"
@@ -55,8 +71,14 @@ const AddBlog = () => {
                 />
 
 
-                <button type="submit" className="submit-btn">Publish</button>
-            </form>
+                {loading ?
+                    <button type="submit" className="save-btn-disable" disabled>
+                        Publishing..
+                    </button> :
+                    <button type="submit" className="save-btn">
+                        Publish
+                    </button>
+                }            </form>
         </div>
     );
 };

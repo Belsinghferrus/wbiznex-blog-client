@@ -48,14 +48,12 @@ const EditBlog = () => {
       return;
     }
   };
-  console.log('Image file:', imageFile);
-  console.log('Preview URL:', preview);
+
 
   return (
-    <div className="edit-blog-page">
+    <div className="add-blog-container">
       <h2>Edit Blog</h2>
       <form encType="multipart/form-data" onSubmit={handleSubmit} className="edit-form">
-        <label>Title:</label>
         <input
           type="text"
           value={title}
@@ -63,10 +61,8 @@ const EditBlog = () => {
           required
         />
 
-        <label>Image:</label>
         <input type="file" accept="image/*" onChange={handleImageChange} />
         {preview && <img src={preview} alt="Preview" className="preview-img" />}
-        <label>Content:</label>
         <ReactQuill value={content} onChange={setContent} />
 <br />
       {loading ? 

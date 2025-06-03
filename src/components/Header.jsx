@@ -3,11 +3,20 @@ import logo from '../assets/wbiznex-invert-logo.png'
 import './css/Header.css'
 import { Link } from 'react-router-dom';
 import useAuthStore from '../store/authStore';
+import { useNavigate } from 'react-router-dom';
+
 
 const Header = () => {
 
-  const { isAuthenticated } = useAuthStore();
+  const { isAuthenticated, logout } = useAuthStore();
 
+  const navigate = useNavigate();
+
+
+  const handleLogout = async () => {
+    await logout();       
+    navigate('/');         
+  };
 
   return (
     <header className="header">
@@ -18,7 +27,7 @@ const Header = () => {
         </div>
         {
           isAuthenticated ?
-            <Link to="/logout" className="login-button">Logout</Link>
+            <Link onClick={handleLogout} className="login-button">Logout</Link>
             :
             <Link to="/login" className="login-button">Login</Link>
         }

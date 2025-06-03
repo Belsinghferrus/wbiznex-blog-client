@@ -31,16 +31,18 @@
   }
   
   .login-button {
-    background-color: white;
-    color: #1103A6;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    background-color: #00A0E3; /* secondary color */
+  color: white;
+  padding: 0.5rem 1.5rem; /* 8px top/bottom, 24px left/right */
+  border-radius: 9999px; /* full rounded */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  font-size: 16px;
+  text-decoration: none;
   }
   
-  .login-button:hover {
+  /* .login-button:hover {
     background-color: #e0e0e0;
-  }
+  } */
   

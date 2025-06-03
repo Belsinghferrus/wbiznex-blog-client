@@ -11,6 +11,9 @@ const Blog = () => {
     fetchBlogById(id);
   }, [id, fetchBlogById]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (!selectedBlog) return <p className="loading">Loading...</p>;
 
   return (

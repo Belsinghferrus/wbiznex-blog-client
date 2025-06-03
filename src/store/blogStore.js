@@ -41,6 +41,7 @@ const useBlogStore = create((set) => ({
 
   addBlog: async (title, content, image) => {
     try {
+      set({ loading: true, error: null });
       const formData = new FormData();
       formData.append('title', title);
       formData.append('content', content);
@@ -58,6 +59,8 @@ const useBlogStore = create((set) => ({
     } catch (err) {
       console.error('Add Blog Error:', err);
       set({ error: 'Failed to add blog' });
+    } finally{
+      set({ loading: false, error: null });
     }
   },
 

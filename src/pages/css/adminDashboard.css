@@ -1,6 +1,10 @@
 .admin-layout {
   display: flex;
   min-height: 100vh;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #f4f4fa;  
+  justify-content: center;
 }
 
 .dashboard-main {
@@ -21,8 +25,6 @@
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .add-blog-button {
   background-color: #1103A6;
