@@ -16,12 +16,22 @@ const Footer = () => {
           <p className="footer-description">
             World Business Nexus is a global business networking platform connecting entrepreneurs and businesses worldwide.
           </p>
-          <div className="social-icons">
-            <i className="fab fa-facebook-f" />
-            <i className="fab fa-twitter" />
-            <i className="fab fa-youtube" />
-            <i className="fab fa-linkedin-in" />
-            <i className="fab fa-instagram" />
+          <div className="social-icons" >
+            <a href="https://www.facebook.com/people/Wbiznex-World-Business-Nexus/61576212310623/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-facebook-f" />
+            </a>
+            <a href="https://x.com/wbiznex" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-twitter" />
+            </a>
+            <a href="https://www.youtube.com/@wbiznex" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-youtube" />
+            </a>
+            <a href="https://www.linkedin.com/in/wbiznex-world-business-nexus-841785366/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin-in" />
+            </a>
+            <a href="https://www.instagram.com/Wbiznex/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram" />
+            </a>
           </div>
         </div>
 
@@ -51,9 +61,8 @@ const Footer = () => {
       <div className='footer-bottom'>
         <p>&copy; {new Date().getFullYear()} World Business Nexus. All rights reserved.</p>
         <div>
-          <a href="">privacy policy</a>
-          
-          <a href="">Terms & Condition</a>
+          <a href="https://wbiznex.com/privacy.html">privacy policy</a>
+          <a href="https://wbiznex.com/terms-and-condition.html">Terms & Condition</a>
         </div>
 
       </div>

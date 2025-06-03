@@ -39,7 +39,6 @@ const AddBlog = () => {
             console.error('Error adding blog:', error);
             alert('Failed to add blog. Please try again.');
         }
-
     };
 
     return (

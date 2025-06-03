@@ -11,7 +11,6 @@ import Header from './components/Header';
 import CreateBlog from './pages/CreateBlog';
 import ProtectedRoute from './utils/protectRoute';
 import useAuthStore from './store/authStore';
-import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
 
