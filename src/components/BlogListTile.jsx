@@ -6,13 +6,13 @@ const BlogListTile = ({ blog, onDelete }) => {
   const navigate = useNavigate();
 
 
-  function handleOnDelete(id){
+  function handleOnDelete(id) {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       onDelete(id);
     }
   }
 
-  
+
   return (
     <div className="blog-tile">
       <img src={blog.image} alt="blog" />
@@ -23,7 +23,7 @@ const BlogListTile = ({ blog, onDelete }) => {
         <button onClick={() => navigate(`/admin/edit/${blog.id}`)} title="Edit">
           ✏️ <span className="action-text">Edit</span>
         </button>
-        <button onClick={ handleOnDelete} title="Delete">
+        <button onClick={handleOnDelete} title="Delete">
           🗑️ <span className="action-text">Delete</span>
         </button>
       </div>

@@ -13,7 +13,7 @@ const AddBlog = () => {
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
     const { addBlog, loading } = useBlogStore();
-    const [preview, setPreview] = useState(null); // State for image preview
+    const [preview, setPreview] = useState(null); 
 
     const navigate = useNavigate();
 
@@ -21,8 +21,6 @@ const AddBlog = () => {
         if (image) {
             const objectUrl = URL.createObjectURL(image);
             setPreview(objectUrl);
-
-            // Cleanup the object URL when the component unmounts or image changes
             return () => URL.revokeObjectURL(objectUrl);
         } else {
             setPreview(null);
