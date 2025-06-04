@@ -11,7 +11,6 @@ import Header from './components/Header';
 import CreateBlog from './pages/CreateBlog';
 import ProtectedRoute from './utils/protectRoute';
 import useAuthStore from './store/authStore';
-import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
 
@@ -25,7 +24,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main className="flex-grow container mx-auto p-4">
+      <main className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog/:id" element={<BlogDetails />} />

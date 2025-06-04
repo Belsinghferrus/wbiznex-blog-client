@@ -21,8 +21,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo-section">
-          <img src={logo} alt="logo" className="logo-img" />
+        <div onClick={() => navigate('/')} className="logo-section">
+          <img src={logo} alt="logo"  className="logo-img" />
           <span className="brand-name">WBIZNEX BLOG</span>
         </div>
         {

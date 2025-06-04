@@ -13,7 +13,7 @@ const AddBlog = () => {
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
     const { addBlog, loading } = useBlogStore();
-    const [preview, setPreview] = useState(null); // State for image preview
+    const [preview, setPreview] = useState(null); 
 
     const navigate = useNavigate();
 
@@ -21,8 +21,6 @@ const AddBlog = () => {
         if (image) {
             const objectUrl = URL.createObjectURL(image);
             setPreview(objectUrl);
-
-            // Cleanup the object URL when the component unmounts or image changes
             return () => URL.revokeObjectURL(objectUrl);
         } else {
             setPreview(null);
@@ -39,7 +37,6 @@ const AddBlog = () => {
             console.error('Error adding blog:', error);
             alert('Failed to add blog. Please try again.');
         }
-
     };
 
     return (
@@ -60,8 +57,6 @@ const AddBlog = () => {
                     required
                 />
                 {preview && <img src={preview} alt="Preview" className="preview-img" />}
-
-
                 <ReactQuill
                     className="quill-editor"
                     theme="snow"
@@ -69,8 +64,6 @@ const AddBlog = () => {
                     onChange={setContent}
                     placeholder="Write your blog content..."
                 />
-
-
                 {loading ?
                     <button type="submit" className="save-btn-disable" disabled>
                         Publishing..
