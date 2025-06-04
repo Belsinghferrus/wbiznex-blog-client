@@ -56,11 +56,11 @@ const Blog = () => {
       <img src={selectedBlog.image} alt={selectedBlog.title} className="blog-detail-image" />
       <div className="blog-detail-content" dangerouslySetInnerHTML={{ __html: selectedBlog.content }} />
       <div className="blog-actions">
-        <button className="share-button" onClick={handleShare}>
+        {/* <button className="share-button" onClick={handleShare}>
           🔗 Share this blog
-        </button>
+        </button> */}
         <div className="share-section">
-          <p className="share-text">Share this Blog:</p>
+          <p className="share-text">Share:</p>
           <div className="share-icons">
             <FacebookShareButton url={shareUrl} quote={`${title} - ${description}`}>
               <FacebookIcon size={32} round />

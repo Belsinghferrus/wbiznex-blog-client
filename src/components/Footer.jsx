@@ -7,10 +7,11 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-
         <div className="footer-section about">
           <div className='logo-section'>
-            <img src={logo} alt="WBIZNEX Logo" className="footer-logo" />
+            <a href="https://wbiznex.com" target="_blank" rel="noopener noreferrer">
+              <img src={logo} alt="WBIZNEX Logo" className="footer-logo" />
+            </a>
             <h3>WBIZNEX</h3>
           </div>
           <p className="footer-description">
@@ -54,9 +55,6 @@ const Footer = () => {
           </div>
           <small>By subscribing, you agree to our Privacy Policy.</small>
         </div>
-
-
-
       </div>
       <div className='footer-bottom'>
         <p>&copy; {new Date().getFullYear()} World Business Nexus. All rights reserved.</p>
@@ -64,7 +62,6 @@ const Footer = () => {
           <a href="https://wbiznex.com/privacy.html">privacy policy</a>
           <a href="https://wbiznex.com/terms-and-condition.html">Terms & Condition</a>
         </div>
-
       </div>
     </footer>
   )

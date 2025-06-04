@@ -57,8 +57,6 @@ const AddBlog = () => {
                     required
                 />
                 {preview && <img src={preview} alt="Preview" className="preview-img" />}
-
-
                 <ReactQuill
                     className="quill-editor"
                     theme="snow"
@@ -66,8 +64,6 @@ const AddBlog = () => {
                     onChange={setContent}
                     placeholder="Write your blog content..."
                 />
-
-
                 {loading ?
                     <button type="submit" className="save-btn-disable" disabled>
                         Publishing..

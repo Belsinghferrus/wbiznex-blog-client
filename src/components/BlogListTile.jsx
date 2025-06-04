@@ -23,7 +23,7 @@ const BlogListTile = ({ blog, onDelete }) => {
         <button onClick={() => navigate(`/admin/edit/${blog.id}`)} title="Edit">
           ✏️ <span className="action-text">Edit</span>
         </button>
-        <button onClick={handleOnDelete} title="Delete">
+        <button onClick={() => handleOnDelete(blog.id)} title="Delete">
           🗑️ <span className="action-text">Delete</span>
         </button>
       </div>

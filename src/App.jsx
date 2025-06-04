@@ -24,7 +24,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main className="flex-grow container mx-auto p-4">
+      <main className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
